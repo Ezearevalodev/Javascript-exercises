@@ -1,28 +1,30 @@
 'use strict'
 
-let m = '' , cont = 0, acum = 0, min, max, prom;
+let cont = 0, acum = 0, min, max, prom;
 
-for (let i = 0; i < 5; i++) {
-    let n = parseInt(prompt('Ingresé un numero'));
+for (let i = 1; i <= 5; i++) {
+    cont ++
 
-    cont++
-    acum += n;
+    let nota = parseInt(prompt("Ingrese un numero"));
 
+    acum += nota;
+    
     if (cont === 1) {
-        min = n;
-        max = n;
-    } else {
-        if (n < min) {
-            min = n
+        min = nota;
+        max = nota;
+    } else{
+        if (min > nota) {
+            min = nota;
         }
-        if (n > max) {
-            max = n
+        if (max < nota) {
+            max = nota;
         }
     }
 
-    prom = acum / cont;
+    prom = acum / [i];
 
+    console.log(`Nota Minima: ${min}`);
+    console.log(`Nota Maxima: ${max}`);
+    console.log(`Nota Promedio: ${prom}`);
+    console.log(` `);
 }
-console.log("Promedio " + prom)
-console.log("Minimo " + min)
-console.log("Maximo " + max)
